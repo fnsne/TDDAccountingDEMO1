@@ -71,6 +71,16 @@ public class TestAccounting {
         );
     }
 
+    @Test
+    public void daily_amount_is_10() {
+        when(repo.getAll()).thenReturn(Arrays.asList(
+                new Budget("201904", 300)));
+        budgetShouldBe(10,
+                LocalDate.of(2019, 04, 1),
+                LocalDate.of(2019, 04, 1)
+        );
+    }
+
     private void budgetShouldBe(double expected, LocalDate start, LocalDate end) {
         assertEquals(expected,
                 accounting.queryBudget(start, end)
