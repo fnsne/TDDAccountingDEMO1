@@ -33,6 +33,10 @@ public class Budget {
         return amount / days();
     }
 
+    public Period createPeriod() {
+        return new Period(firstDay(), lastDay());
+    }
+
     private YearMonth getYearMonth() {
         return YearMonth.parse(yearMonth, DateTimeFormatter.ofPattern("yyyyMM"));
     }
