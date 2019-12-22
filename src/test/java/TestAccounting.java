@@ -24,7 +24,7 @@ public class TestAccounting {
     @Test
     public void period_inside_budget_month() {
         when(repo.getAll()).thenReturn(Arrays.asList(
-                new Budget("201904", 1)));
+                new Budget("201904", 30)));
         budgetShouldBe(1.0,
                 LocalDate.of(2019, 04, 01),
                 LocalDate.of(2019, 04, 01)
