@@ -1,3 +1,5 @@
+package Accounting;
+
 import java.time.LocalDate;
 
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -20,4 +22,5 @@ public class Accounting {
     private double intervalDays(LocalDate start, LocalDate end) {
         return DAYS.between(start, end) + 1;
     }
+
 }
