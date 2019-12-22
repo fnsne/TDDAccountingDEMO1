@@ -15,7 +15,8 @@ public class Accounting {
             return 0;
         }
         Budget budget = budgets.get(0);
-        return budget.getOverlapAmount(new Period(start, end));
+        Period period = new Period(start, end);
+        return budget.getOverlapAmount(period);
     }
 
 }
