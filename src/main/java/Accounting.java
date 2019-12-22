@@ -15,12 +15,10 @@ public class Accounting {
         if (budgets.isEmpty()) {
             return 0;
         }
-        double totalAmount = 0;
         Period period = new Period(start, end);
-        for (Budget budget : budgets) {
-            totalAmount += budget.getOverlapAmount(period);
-        }
-        return totalAmount;
+        return budgets.stream()
+                .mapToDouble(budget -> budget.getOverlapAmount(period))
+                .sum();
     }
 
 }
