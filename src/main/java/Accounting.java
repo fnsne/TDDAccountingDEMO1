@@ -15,9 +15,6 @@ public class Accounting {
             return 0;
         }
         Budget budget = budgets.get(0);
-        if (budget.firstDay().isAfter(end) || budget.lastDay().isBefore(start)) {
-            return 0;
-        }
         return new Period(start, end).overlapDays(budget);
     }
 
