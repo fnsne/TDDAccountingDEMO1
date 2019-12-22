@@ -11,30 +11,30 @@ public class Budget {
         this.amount = amount;
     }
 
-    public LocalDate firstDay() {
+    public double getOverlapAmount(Period period) {
+        double overlapDays = period.overlapDays(createPeriod());
+        return getDailyAmount() * overlapDays;
+    }
+
+    private double days() {
+        return getYearMonth().lengthOfMonth();
+    }
+
+    private double getDailyAmount() {
+        return amount / days();
+    }
+
+    private Period createPeriod() {
+        return new Period(firstDay(), lastDay());
+    }
+
+    private LocalDate firstDay() {
         YearMonth ym = getYearMonth();
         return ym.atDay(1);
     }
 
-    public LocalDate lastDay() {
+    private LocalDate lastDay() {
         return getYearMonth().atEndOfMonth();
-    }
-
-    public double days() {
-        return getYearMonth().lengthOfMonth();
-    }
-
-    public double getDailyAmount() {
-        return amount / days();
-    }
-
-    public Period createPeriod() {
-        return new Period(firstDay(), lastDay());
-    }
-
-    public double getOverlapAmount(Period period) {
-        double overlapDays = period.overlapDays(createPeriod());
-        return getDailyAmount() * overlapDays;
     }
 
     private YearMonth getYearMonth() {
