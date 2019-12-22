@@ -18,21 +18,7 @@ public class Accounting {
         if (budget.firstDay().isAfter(end) || budget.lastDay().isBefore(start)) {
             return 0;
         }
-        return overlapDays(start, end, budget);
-    }
-
-    private double overlapDays(LocalDate start, LocalDate end, Budget budget) {
-        LocalDate overlapFirstDay = start;
-        if (start.isBefore(budget.firstDay())) {
-            overlapFirstDay = budget.firstDay();
-        }
-
-        LocalDate overlapLastDay = end;
-        if (end.isAfter(budget.lastDay())) {
-            overlapLastDay = budget.lastDay();
-        }
-        Period period = new Period(overlapFirstDay, overlapLastDay);
-        return period.days();
+        return new Period(start, end).overlapDays(budget);
     }
 
 }

@@ -19,4 +19,21 @@ public class Period {
     public LocalDate getEnd() {
         return end;
     }
+
+    public LocalDate getStart() {
+        return start;
+    }
+
+    public double overlapDays(Budget budget) {
+        LocalDate overlapFirstDay = getStart();
+        if (getStart().isBefore(budget.firstDay())) {
+            overlapFirstDay = budget.firstDay();
+        }
+
+        LocalDate overlapLastDay = getEnd();
+        if (getEnd().isAfter(budget.lastDay())) {
+            overlapLastDay = budget.lastDay();
+        }
+        return new Period(overlapFirstDay, overlapLastDay).days();
+    }
 }
