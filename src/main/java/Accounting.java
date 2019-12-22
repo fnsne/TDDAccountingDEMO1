@@ -13,7 +13,7 @@ public class Accounting {
             return 0;
         }
         Period period = new Period(start, end);
-        LocalDate firstDayOfBudget = LocalDate.of(2019, 04, 01);
+        LocalDate firstDayOfBudget = repo.getAll().get(0).firstDay();
         if (firstDayOfBudget.isAfter(end)) {
             return 0;
         }
