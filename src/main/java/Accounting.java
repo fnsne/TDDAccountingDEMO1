@@ -19,7 +19,6 @@ public class Accounting {
         Period period = new Period(start, end);
         for (Budget budget : budgets) {
             totalAmount += budget.getOverlapAmount(period);
-
         }
         return totalAmount;
     }

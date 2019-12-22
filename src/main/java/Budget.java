@@ -7,13 +7,8 @@ public class Budget {
     private final double amount;
 
     public Budget(String yearMonth, int amount) {
-
         this.yearMonth = yearMonth;
         this.amount = amount;
-    }
-
-    public double getAmount() {
-        return amount;
     }
 
     public LocalDate firstDay() {
