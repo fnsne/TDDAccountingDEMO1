@@ -11,10 +11,6 @@ public class Period {
         this.end = end;
     }
 
-    public double days() {
-        return DAYS.between(start, end) + 1;
-    }
-
     public LocalDate getEnd() {
         return end;
     }
@@ -36,6 +32,6 @@ public class Period {
         if (getEnd().isAfter(period.getEnd())) {
             overlapLastDay = period.getEnd();
         }
-        return new Period(overlapFirstDay, overlapLastDay).days();
+        return DAYS.between(overlapFirstDay, overlapLastDay) + 1;
     }
 }
