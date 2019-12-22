@@ -15,8 +15,7 @@ public class Accounting {
             return 0;
         }
         Budget budget = budgets.get(0);
-        double dailyAmount = budget.getDailyAmount();
-        return dailyAmount * new Period(start, end).overlapDays(budget);
+        return budget.getDailyAmount() * new Period(start, end).overlapDays(budget);
     }
 
 }
