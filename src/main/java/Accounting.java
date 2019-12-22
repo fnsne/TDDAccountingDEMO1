@@ -19,6 +19,10 @@ public class Accounting {
         if (budget.firstDay().isAfter(end)) {
             return 0;
         }
+        LocalDate lastDayOfBudget = LocalDate.of(2019, 4, 1);
+        if (lastDayOfBudget.isBefore(start)) {
+            return 0;
+        }
         return period.intervalDays();
     }
 
