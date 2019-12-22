@@ -37,6 +37,11 @@ public class Budget {
         return new Period(firstDay(), lastDay());
     }
 
+    public double getOverlapAmount(Period period) {
+        double overlapDays = period.overlapDays(createPeriod());
+        return getDailyAmount() * overlapDays;
+    }
+
     private YearMonth getYearMonth() {
         return YearMonth.parse(yearMonth, DateTimeFormatter.ofPattern("yyyyMM"));
     }
