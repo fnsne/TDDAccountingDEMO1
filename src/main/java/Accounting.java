@@ -16,10 +16,7 @@ public class Accounting {
         }
         Period period = new Period(start, end);
         Budget budget = budgets.get(0);
-        if (budget.firstDay().isAfter(end)) {
-            return 0;
-        }
-        if (budget.lastDay().isBefore(start)) {
+        if (budget.firstDay().isAfter(end) || budget.lastDay().isBefore(start)) {
             return 0;
         }
         return period.intervalDays();
