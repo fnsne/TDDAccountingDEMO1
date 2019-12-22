@@ -61,6 +61,16 @@ public class TestAccounting {
         );
     }
 
+    @Test
+    public void period_overlap_budget_last_day() {
+        when(repo.getAll()).thenReturn(Arrays.asList(
+                new Budget("201904", 30)));
+        budgetShouldBe(1.0,
+                LocalDate.of(2019, 04, 30),
+                LocalDate.of(2019, 05, 01)
+        );
+    }
+
     private void budgetShouldBe(double expected, LocalDate start, LocalDate end) {
         assertEquals(expected,
                 accounting.queryBudget(start, end)
