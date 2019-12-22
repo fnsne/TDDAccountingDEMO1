@@ -1,7 +1,5 @@
 import java.time.LocalDate;
 
-import static java.time.temporal.ChronoUnit.DAYS;
-
 public class Accounting {
     private BudgetRepo repo;
 
@@ -14,11 +12,7 @@ public class Accounting {
         if (repo.getAll().isEmpty()) {
             return 0;
         }
-        return intervalDays(start, end);
-    }
-
-    private double intervalDays(LocalDate start, LocalDate end) {
-        return DAYS.between(start, end) + 1;
+        return new Period(start, end).intervalDays();
     }
 
 }
