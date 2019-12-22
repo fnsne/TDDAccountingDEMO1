@@ -17,7 +17,15 @@ public class Budget {
     }
 
     public LocalDate firstDay() {
-        YearMonth ym = YearMonth.parse(yearMonth, DateTimeFormatter.ofPattern("yyyyMM"));
+        YearMonth ym = getYearMonth();
         return ym.atDay(1);
+    }
+
+    public LocalDate lastDay() {
+        return getYearMonth().atEndOfMonth();
+    }
+
+    private YearMonth getYearMonth() {
+        return YearMonth.parse(yearMonth, DateTimeFormatter.ofPattern("yyyyMM"));
     }
 }
