@@ -81,6 +81,19 @@ public class TestAccounting {
         );
     }
 
+    @Test
+    public void multiple_budgets() {
+        when(repo.getAll()).thenReturn(Arrays.asList(
+                new Budget("201903", 31),
+                new Budget("201904", 300),
+                new Budget("201905", 3100)
+        ));
+        budgetShouldBe(510,
+                LocalDate.of(2019, 03, 31),
+                LocalDate.of(2019, 06, 2)
+        );
+    }
+
     private void budgetShouldBe(double expected, LocalDate start, LocalDate end) {
         assertEquals(expected,
                 accounting.queryBudget(start, end)
