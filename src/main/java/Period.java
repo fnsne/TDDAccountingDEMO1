@@ -15,4 +15,8 @@ public class Period {
     public double intervalDays() {
         return DAYS.between(start, end) + 1;
     }
+
+    public LocalDate getEnd() {
+        return end;
+    }
 }

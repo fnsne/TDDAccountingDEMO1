@@ -12,7 +12,12 @@ public class Accounting {
         if (repo.getAll().isEmpty()) {
             return 0;
         }
-        return new Period(start, end).intervalDays();
+        Period period = new Period(start, end);
+        LocalDate firstDayOfBudget = LocalDate.of(2019, 04, 01);
+        if (firstDayOfBudget.isAfter(end)) {
+            return 0;
+        }
+        return period.intervalDays();
     }
 
 }
