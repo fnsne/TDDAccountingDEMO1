@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -14,9 +15,13 @@ public class Accounting {
         if (budgets.isEmpty()) {
             return 0;
         }
-        Budget budget = budgets.get(0);
+        double totalAmount = 0;
         Period period = new Period(start, end);
-        return budget.getOverlapAmount(period);
+        for (Budget budget : budgets) {
+            totalAmount += budget.getOverlapAmount(period);
+
+        }
+        return totalAmount;
     }
 
 }

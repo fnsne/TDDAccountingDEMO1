@@ -88,9 +88,9 @@ public class TestAccounting {
                 new Budget("201904", 300),
                 new Budget("201905", 3100)
         ));
-        budgetShouldBe(510,
+        budgetShouldBe(501,
                 LocalDate.of(2019, 03, 31),
-                LocalDate.of(2019, 06, 2)
+                LocalDate.of(2019, 05, 2)
         );
     }
 
