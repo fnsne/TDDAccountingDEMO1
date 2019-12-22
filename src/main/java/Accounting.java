@@ -19,7 +19,7 @@ public class Accounting {
         if (budget.firstDay().isAfter(end)) {
             return 0;
         }
-        LocalDate lastDayOfBudget = budgets.get(budgets.size() - 1).lastDay();
+        LocalDate lastDayOfBudget = budget.lastDay();
         if (lastDayOfBudget.isBefore(start)) {
             return 0;
         }
