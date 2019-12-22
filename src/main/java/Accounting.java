@@ -19,7 +19,7 @@ public class Accounting {
         if (budget.firstDay().isAfter(end) || budget.lastDay().isBefore(start)) {
             return 0;
         }
-        return period.intervalDays();
+        return period.days();
     }
 
 }

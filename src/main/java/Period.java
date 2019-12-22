@@ -12,7 +12,7 @@ public class Period {
         this.end = end;
     }
 
-    public double intervalDays() {
+    public double days() {
         return DAYS.between(start, end) + 1;
     }
 
