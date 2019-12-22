@@ -14,11 +14,11 @@ public class Accounting {
         if (budgets.isEmpty()) {
             return 0;
         }
-        Period period = new Period(start, end);
         Budget budget = budgets.get(0);
         if (budget.firstDay().isAfter(end) || budget.lastDay().isBefore(start)) {
             return 0;
         }
+        Period period = new Period(start, end);
         return period.days();
     }
 
