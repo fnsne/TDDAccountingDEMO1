@@ -1,6 +1,4 @@
-package Accounting;
-
-import Accounting.Accounting;
+import Accounting;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -37,7 +35,7 @@ public class TestAccounting {
 //    @Test
 //    public void period_no_overlap_before_first_day() {
 //        when(repo.getAll()).thenReturn(Arrays.asList(
-//                new Accounting.Budget("201904", 1)));
+//                new Budget("201904", 1)));
 //        budgetShouldBe(0.0,
 //                LocalDate.of(2019, 03, 01),
 //                LocalDate.of(2019, 03, 01)

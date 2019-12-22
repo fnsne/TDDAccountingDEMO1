@@ -1,5 +1,3 @@
-package Accounting;
-
 public class Budget {
     private final String yearMonth;
     private final int amount;

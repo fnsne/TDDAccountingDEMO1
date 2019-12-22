@@ -1,5 +1,3 @@
-package Accounting;
-
 import java.time.LocalDate;
 
 import static java.time.temporal.ChronoUnit.DAYS;
