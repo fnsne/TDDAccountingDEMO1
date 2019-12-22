@@ -4,7 +4,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Budget {
     private final String yearMonth;
-    private final int amount;
+    private final double amount;
 
     public Budget(String yearMonth, int amount) {
 
@@ -27,6 +27,10 @@ public class Budget {
 
     public double days() {
         return getYearMonth().lengthOfMonth();
+    }
+
+    public double getDailyAmount() {
+        return amount / days();
     }
 
     private YearMonth getYearMonth() {
